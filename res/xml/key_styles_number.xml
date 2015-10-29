@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2010, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<merge
+    xmlns:carloz="http://schemas.android.com/apk/res/com.carloz.inputmethod">
+    <key-style
+        carloz:styleName="numKeyBaseStyle"
+        carloz:keyActionFlags="noKeyPreview" />
+    <key-style
+        carloz:styleName="numKeyStyle"
+        carloz:keyLabelFlags="followKeyLargeLetterRatio"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <key-style
+        carloz:styleName="numModeKeyStyle"
+        carloz:keyLabelFlags="fontNormal|followKeyLetterRatio|followFunctionalTextColor"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <key-style
+        carloz:styleName="numFunctionalKeyStyle"
+        carloz:keyLabelFlags="followKeyLargeLetterRatio"
+        carloz:backgroundType="functional"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <key-style
+        carloz:styleName="numberKeyStyle"
+        carloz:keyLabelFlags="alignLabelOffCenter|hasHintLabel"
+        carloz:parentStyle="numKeyStyle" />
+    <key-style
+        carloz:styleName="num0KeyStyle"
+        carloz:keySpec="0"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num1KeyStyle"
+        carloz:keySpec="1"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num2KeyStyle"
+        carloz:keySpec="2"
+        carloz:keyHintLabel="ABC"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num3KeyStyle"
+        carloz:keySpec="3"
+        carloz:keyHintLabel="DEF"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num4KeyStyle"
+        carloz:keySpec="4"
+        carloz:keyHintLabel="GHI"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num5KeyStyle"
+        carloz:keySpec="5"
+        carloz:keyHintLabel="JKL"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num6KeyStyle"
+        carloz:keySpec="6"
+        carloz:keyHintLabel="MNO"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num7KeyStyle"
+        carloz:keySpec="7"
+        carloz:keyHintLabel="PQRS"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num8KeyStyle"
+        carloz:keySpec="8"
+        carloz:keyHintLabel="TUV"
+        carloz:parentStyle="numberKeyStyle" />
+    <key-style
+        carloz:styleName="num9KeyStyle"
+        carloz:keySpec="9"
+        carloz:keyHintLabel="WXYZ"
+        carloz:parentStyle="numberKeyStyle" />
+    <!-- U+FF0A: "＊" FULLWIDTH ASTERISK -->
+    <key-style
+        carloz:styleName="numStarKeyStyle"
+        carloz:keySpec="&#xFF0A;|*"
+        carloz:parentStyle="numKeyStyle" />
+    <!-- Only for non-tablet device -->
+    <key-style
+        carloz:styleName="numPhoneToSymbolKeyStyle"
+        carloz:keySpec="!text/keylabel_to_phone_symbols|!code/key_switch_alpha_symbol"
+        carloz:parentStyle="numModeKeyStyle" />
+    <key-style
+        carloz:styleName="numPhoneToNumericKeyStyle"
+        carloz:keySpec="!text/keylabel_to_phone_numeric|!code/key_switch_alpha_symbol"
+        carloz:parentStyle="numModeKeyStyle" />
+    <key-style
+        carloz:styleName="numPauseKeyStyle"
+        carloz:keySpec="!text/label_pause_key|,"
+        carloz:keyLabelFlags="followKeyHintLabelRatio|autoXScale"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <key-style
+        carloz:styleName="numWaitKeyStyle"
+        carloz:keySpec="!text/label_wait_key|;"
+        carloz:keyLabelFlags="followKeyHintLabelRatio|autoXScale"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <key-style
+        carloz:styleName="numTabKeyStyle"
+        carloz:keyActionFlags="noKeyPreview"
+        carloz:parentStyle="tabKeyStyle" />
+    <key-style
+        carloz:styleName="numSpaceKeyStyle"
+        carloz:keySpec="!icon/space_key_for_number_layout|!code/key_space"
+        carloz:keyLabelFlags="alignIconToBottom"
+        carloz:keyActionFlags="enableLongPress"
+        carloz:parentStyle="numKeyBaseStyle" />
+    <!-- TODO: Consolidate these space key styles with numSpaceKeyStyle above by introducing <case>
+         predicator that checks device form-factor. -->
+    <switch>
+        <case carloz:keyboardTheme="ICS|KLP">
+            <key-style
+                carloz:styleName="tabletNumSpaceKeyStyle"
+                carloz:keySpec="!icon/space_key|!code/key_space"
+                carloz:backgroundType="functional"
+                carloz:keyActionFlags="enableLongPress"
+                carloz:parentStyle="numKeyBaseStyle" />
+        </case>
+        <case carloz:keyboardTheme="LXXLight|LXXDark">
+            <key-style
+                carloz:styleName="tabletNumSpaceKeyStyle"
+                carloz:keySpec="!icon/space_key|!code/key_space"
+                carloz:backgroundType="spacebar"
+                carloz:keyActionFlags="enableLongPress"
+                carloz:parentStyle="numKeyBaseStyle" />
+        </case>
+    </switch>
+</merge>
